@@ -1,0 +1,46 @@
+
+Step 1: Craete a Folder
+mkdir /home/GlobalLogic 
+
+Step 2: Create group
+groupadd IT
+
+tep 3:create users
+
+useradd h1 
+passwd h1
+
+useradd h2
+passwd h2
+
+Step 4:add in same group ie IT
+
+usermod -aG IT h1
+usermod -aG IT h2
+
+step 5:add GlobalLogic group a IT 
+chown  :IT /home/GlobalLogic
+
+Step 6:Add persmission to folder i.e for user =wrx group =wrx others=r
+chomd 774 /home/GlobalLogic
+
+step 7:Add permission to group that all the group members of can edit write exucte files (g+s) & only owner of the user can only delete the file(o+t)
+chmod g+s,o+t /home/GlobalLogic
+
+Step 8:now switch to user h1 and using pasword
+
+su h1
+enter password 
+step 9:go to GlobalLogic Folder
+cd GlobalLogic   (go into folder)
+
+Step 10:create new file and enter some text 
+vim filename1  -->enter text --->esc :wq
+
+step 11:switch to other user i.e h2 
+switch user to h2
+
+step 12:go to GlobalLogic Folder
+cd GlobalLogic 
+Step13:try to edit file (editable)
+Step 14:try to delete file(Not deleteable)
